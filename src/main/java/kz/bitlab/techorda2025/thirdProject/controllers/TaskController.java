@@ -1,0 +1,13 @@
+package kz.bitlab.techorda2025.thirdProject.controllers;
+
+import ch.qos.logback.core.model.Model;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class TaskController {
+    @GetMapping(value="/tasks")
+    public String getTasks() {
+        return "tasks";
+    }
+}
