@@ -37,7 +37,8 @@ layout:decorate="layouts/taskLayout.html">
       <td th:text="${task.id}">ID</td>
       <td th:text="${task.name}">Name</td>
       <td th:text="${task.deadlineDate}">Deadline</td>
-      <td th:text="${task.completed}">Completed</td>
+      <td th:if="${task.isCompleted()}" th:text="YES"></td>
+      <td th:unless="${task.isCompleted()}" th:text="NO"></td>
       <td><a th:href="@{'/details/' + ${task.id}}">Details</a></td>
     </tr>
   </table>
