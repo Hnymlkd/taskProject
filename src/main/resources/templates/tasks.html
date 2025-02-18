@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="layouts/taskLayout.html">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+  <link href="/css/bootstrap.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div layout:fragment="thirdFragment">
+  <button class="btn btn-primary">+ Add New Task</button>
+</div>
+<div layout:fragment="firstFragment">
+  <div class="col-12">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+  </div>
+</div>
+<div layout:fragment="secondFragment">
+  <table class="table">
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Deadline Date</td>
+      <td>Is Complected</td>
+      <td>Details</td>
+    </tr>
+    <tr th:each="task : ${tasks}">
+      <td th:text="${task.id}">ID</td>
+      <td th:text="${task.name}">Name</td>
+      <td th:text="${task.deadlineDate}">Deadline</td>
+      <td th:text="${task.completed}">Completed</td>
+      <td><a th:href="@{'/details/' + ${task.id}}">Details</a></td>
+    </tr>
+  </table>
+</div>
+</body>
+<script src="/js/bootstrap.bundle.js" type="text/javascript"></script>
+</html>

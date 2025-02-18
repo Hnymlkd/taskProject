@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+</head>
+<body>
+<div class ="container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Task Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">All tasks</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class ="container">
+    <div class="row">
+        <div class = "col-3 mt-3" layout:fragment="thirdFragment">
+
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-3 mt-3" layout:fragment="firstFragment">
+
+        </div>
+        <div class="col-9 mt-3" layout:fragment="secondFragment">
+
+        </div>
+    </div>
+</div>
+<div class="container bg-dark text-light">
+    <div class="row py-3">
+        <div class="col-12 text-center">
+            <span>Copyright &copy; All Rights Reserved</span>
+        </div>
+    </div>
+</div>
+<script type="text/js" src="/js/bootstrap.bundle.js"></script>
+</body>
+</html>
